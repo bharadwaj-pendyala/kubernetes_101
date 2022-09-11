@@ -1,0 +1,34 @@
+#ensure deployment config is present
+kubectl create -f helloworld.yaml
+
+#kickstart/serve helloworld app
+minukube service helloworld
+    ##Opens browser with the content
+
+--Breaking down the config--
+
+#all resources that are up and running in cluster
+kubectl get all 
+    ## pod | service | deployment
+
+#get deployment alone
+kubectl get deployment
+    ##provides you the name of the deployment
+
+#introspecting into a specific deployment
+kubectl get deployment/<deployment_name> -o yaml
+    ##fetches config of live deployment that is running
+
+#get service alone
+kubectl get service
+
+#introspecting into a specific service
+kubectl get service/<service_name> -o yaml
+
+#create a yaml file with multiple configs including deployments and service seperated with a '---'
+
+
+
+
+
+
